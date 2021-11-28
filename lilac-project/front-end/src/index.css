@@ -1,0 +1,292 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.top_header{
+    height: 30px;
+    background-color: royalblue;
+}
+.header-section{
+    color: white;
+    font-size: small;
+    padding-top: 7px;
+}
+.align-left{
+    display: flex;
+    flex-direction: row;
+}
+.align-left>div{
+    padding-left: 30px;
+}
+.align-right{
+margin-left: auto;
+}
+.items{
+    display: flex;
+    flex-direction: row;
+}
+.item{
+    padding-left: 10px;
+}
+.main_secondheader{
+    margin-top: 25px;
+    display: flex;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+.logo_image{
+    display: flex;
+}
+.logo_image img{
+    width: 60px;
+    height: 50px;
+}
+.button_one{
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    width: 150px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.input_one{
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 250px;
+    background-color: #efefef;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+.classifieds-btn{
+    width: 90px;
+    height: 60px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: #238fe7;
+}
+.main_secondheader_nav-right{
+    float: right;
+    margin-left: auto;
+}
+.main_secondheader_nav-right-items{
+    display: flex;
+}
+.main_secondheader_nav-right-item{
+    padding-left: 55px;
+}
+nav{
+    padding-left: 7%;
+}
+li{
+    padding-left:10px ;
+}
+.header-section{
+    padding-left: 7%;
+    padding-right: 7%;
+    display: flex;
+}
+.img1{
+    height: 450px;
+    width: 90%;
+    margin-left: 70px;
+    background-image:url(https://www.publicdomainpictures.net/pictures/30000/velka/solid-green-background.jpg);
+
+
+}
+.img1 img{
+    width: 350px;
+    height: 350px;
+    margin-top: 50px;
+    background: transparent;
+
+}
+.slider_main_banner_1 img{
+    height: 423px;
+    width: max-content;
+    float: left;
+}
+.slider_quoteone{
+    color: white;
+    padding-top: 150px;
+    font-size: 35px;
+    line-height: 20px;
+}
+.product_first_row_main{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.best-deals-img{
+  height: 130px;
+}
+.best-deals-name{
+    float: right;
+    padding-top: 15px;
+}
+.best-deals-product{
+    display: flex;
+}
+.best-deal-product-div-2{
+    display: flex;
+} 
+.best-deal-product-div-2>p{
+    line-height: 18px;
+    
+}
+.best-deal-product-div-2>p:last-child{
+    line-height: 18px;
+    color: grey;
+}
+.best-deal-product-price{
+    color: blue;
+    line-height: 40px;
+}
+.best-deal-product-star{
+
+    color: blue;
+}
+.best-deal-product-price,.best-deal-product-star{
+    margin-bottom: 0px !important ;
+    line-height: 30px;
+}
+.best-deal-star-rating{
+    font-size: 10px;
+}
+.Second_col{
+    background-color: #efefef;
+    padding-top: 20px;
+    color: black;
+    height: 400px;
+    
+}
+.Second_col img{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px ;
+    border-top-left-radius:20px ;
+    border-top-right-radius:20px ;
+    height: auto;
+    display: flex;
+}.UrgentSelling-name{
+    background-color: white;
+    height: 150px;
+}
+.row{
+    --bs-gutter-x: 0 !important;
+}
+.heading-recommented{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.cards_productsecond img{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px ;
+    border-top-left-radius:20px ;
+    border-top-right-radius:20px ;
+
+}.Recommented_col{
+    background-color: white;
+}
+.cards_productsecond{
+    justify-content: space-between;
+}
+.flash-sale{
+    background-image: url(https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-4565.jpg?size=626&ext=jpg);
+    height: 250px;
+    margin-top: 60px;
+    margin-right: 10%;
+    margin-left: 10%;
+    border-radius: 20px;
+    color: white;
+}
+.flash-sale-text{
+   padding-top: 30px;
+   padding-left: 40px;
+   float: left;
+}
+.cardsize{
+  max-width: 340px;
+  margin-top: 50px;
+  float: right;
+  margin-right: 30px;
+}
+.card-add-to-cart{
+    border: none;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+    background:"white";
+    height: 350px;
+}
+.card-img-top-add-to{
+    height: 180px;
+
+}
+.add-to-cart-price{
+  margin-bottom: 0px;
+    font-size: 15px;
+    color: blue;
+}
+.add-to-cart-cut-price{
+    color: grey;
+    font-size: 12px;
+}
+.btn-model-add-to-cart{
+    background:"transparent";
+    color: rgb(58, 58, 175);
+    border: 2px solid rgb(58, 58, 175);
+    border-radius: 10px;
+    width: 9rem;
+}
+.heading-addcart{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.fourth-card-cardone{
+    padding-right: 10%;
+    padding-left: 10%;
+}
+.main-card{
+    color: white;
+}
+.para-card{
+    padding-top: 50px;
+}
+.back-to-top{
+    height: 90px;
+    background-color:#efefef;
+    color: grey;
+    text-align: center;
+}
+.news_letter{
+    height: 150px;
+    background-color: rgb(110, 87, 209);
+}
+.news_letter_row{
+    color: white;
+    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.flex{
+    display: flex;
+}
+.custom-newsletter-input{
+    height: 50px;
+    width: 60%;
+    border: none;
+    padding-right: 100px;
+    border-radius: 10px;
+}
+.align-right-news_leter{
+    padding-top: 20px;
+    margin-left: auto;
+    text-align: center;
+}
+.custom-newsletter-button{
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 6px;
+    margin-left: -120px;
+    background-color: rgb(59, 53, 53);
+    color: white;
+}
