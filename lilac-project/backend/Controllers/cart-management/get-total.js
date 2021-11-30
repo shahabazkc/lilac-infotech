@@ -4,6 +4,8 @@ const { mongoose } = require('../../Config/mongo-connection');
 const getTotal = (userId) => {
     const cartInfo = mongoose.model('cart', cartSchema);
     return new Promise(async (resolve, reject) => {
+        
+        //GET THE TOTAL OF THE USERCART WITH COMBINING WITH PRODUCT COLLECTION
         cartInfo.aggregate([
             {
                 $match: { user: userId }

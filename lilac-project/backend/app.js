@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 
 const cors = require('cors');
 
+//USER ROUTER
 var usersRouter = require('./Routes/users');
 
 require('dotenv').config();
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+//USING THE USER ROUTER
 app.use('/', usersRouter);
 
 

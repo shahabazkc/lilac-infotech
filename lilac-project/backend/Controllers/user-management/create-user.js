@@ -3,6 +3,8 @@ const { userSchema } = require('../../Models/userModels');
 const bcrypt = require('bcryptjs');
 const createUser = (data) => {
     return new Promise(async (resolve, reject) => {
+
+        //CREATING USER OBJECT LIKE USER SCHEMA
         let userData = {
             name: data.name,
             password: data.password,

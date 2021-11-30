@@ -1,7 +1,9 @@
 const jwt = require('jsonwebtoken');
 
+// VERIFY JWT TOKEN
 const verifyToken = (req, res, next) => {
     try {
+        //ACCESSING TOKEN
         let token = req.header('x-access-token');;
         token = token.split(" ")[1];
         if (!token) return res.status(401).json({ msg: "No token authorisation denied" })

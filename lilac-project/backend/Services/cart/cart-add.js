@@ -1,5 +1,6 @@
 const { cartAdd } = require('../../Controllers/cart-management/add-to-cart');
 
+//ADD TO CART ROUTE HANDLER
 const addToCart = (req, res) => {
     let { userId } = req.jwt;
     let { proId } = req.body;

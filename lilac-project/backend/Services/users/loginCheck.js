@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+//USER CHECK ROUTE HANDLER
 const userCheck = (req, res) => {
     let token = req.header('x-access-token');
     if (!token) return res.status(200).json({ status: false, msg: "No token authorisation denied" })

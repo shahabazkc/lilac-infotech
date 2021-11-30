@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+//JWT SIGN
 const jwtSign = (userData) => {
     return new Promise(async(resolve,reject)=>{
         try {

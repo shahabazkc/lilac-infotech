@@ -1,5 +1,6 @@
 const {removeProduct} = require('../../Controllers/cart-management/remove-product');
 
+//PRODUCT REMOVING FROM CART HANDLER
 const removeProd = (req,res) => {
     let {userId} = req.jwt;
     let {proId} = req.body;

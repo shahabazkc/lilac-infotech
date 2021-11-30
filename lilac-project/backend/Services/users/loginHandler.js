@@ -1,6 +1,7 @@
 const { jwtSign } = require('../../Controllers/authentication/jwtSign');
 const { loginUser } = require('../../Controllers/user-management/login-user');
 
+//LOGIN POST ROUTE HANDLER
 const loginHandler = (req, res) => {
     loginUser(req.body).then((response) => {
         if (response.auth) {

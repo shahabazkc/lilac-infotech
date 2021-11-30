@@ -4,6 +4,8 @@ const { mongoose } = require('../../Config/mongo-connection');
 const getWithProductTotal = (userId) => {
     const cartInfo = mongoose.model('cart', cartSchema);
     return new Promise(async (resolve, reject) => {
+
+        //GETTING THE PRODUCT WITH PRODUCT TOTAL TO THE QUANTITY
         cartInfo.aggregate([
             {
                 $match: { user: userId }

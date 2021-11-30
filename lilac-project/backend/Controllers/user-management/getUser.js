@@ -1,3 +1,4 @@
+
 const getUser = (req, res) => {
     let token = req.header('x-access-token');;
     token = token.split(" ")[1];

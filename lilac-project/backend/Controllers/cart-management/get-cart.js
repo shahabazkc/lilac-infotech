@@ -3,7 +3,10 @@ const { mongoose } = require('../../Config/mongo-connection');
 
 const getCartProducts = (userId) => {
     const cartInfo = mongoose.model('cart', cartSchema);
+
     return new Promise(async (resolve, reject) => {
+        
+        //AGGREGATING THE USER CART WITH PRODUCT COLLECTION
         cartInfo.aggregate([
             {
                 $match: { user: userId }

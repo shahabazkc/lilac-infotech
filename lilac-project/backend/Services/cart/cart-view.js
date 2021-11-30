@@ -1,6 +1,8 @@
-const {getCartProducts} = require('../../Controllers/cart-management/get-cart');
+
 const {getTotal} = require('../../Controllers/cart-management/get-total');
 const {getWithProductTotal} = require("../../Controllers/cart-management/product-with-total");
+
+//CART VIEW ROUTE HANDLER
 const cartView = async (req,res) => {
     let {userId} = req.jwt;
     if(userId){
