@@ -6,14 +6,14 @@ const loginUser = (data) => {
         const userModel = mongoose.model('users', userSchema);
         let userMatch = await userModel.findOne({ email: data.email })
         if (userMatch) {
-            bcrypt.compare(data.password,userMatch.password).then((response) => {
+            bcrypt.compare(data.password, userMatch.password).then((response) => {
                 if (response) {
-                    let { name, email} = userMatch;
+                    let { name, email, _id } = userMatch;
                     let response = {
                         auth: true,
                         status: true,
                         user: {
-                            name, email
+                            name, email, userId: _id
                         }
                     };
                     resolve(response);
@@ -25,7 +25,7 @@ const loginUser = (data) => {
                     };
                     resolve(response);
                 }
-            }).catch((err)=>{
+            }).catch((err) => {
                 let response = {
                     auth: false,
                     status: false
@@ -33,7 +33,7 @@ const loginUser = (data) => {
                 resolve(response);
             });
         }
-        else{
+        else {
             let response = {
                 auth: false,
                 status: false

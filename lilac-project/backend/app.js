@@ -2,21 +2,29 @@ var createError = require('http-errors');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 
+const cors = require('cors');
+
 var usersRouter = require('./Routes/users');
 
 require('dotenv').config();
 
 var app = express();
 
+//Setting the Cors
+app.use(cors({
+  origin: ["", "http://localhost:3000"],
+  credentials: true
+}));
 
 
+app.set('trust proxy', true)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-
 app.use('/', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -34,6 +42,6 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000,()=>{
-    console.log("server started on port 3000");
+app.listen(5000, () => {
+  console.log("server started on port 3000");
 })

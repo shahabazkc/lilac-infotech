@@ -1,6 +1,6 @@
 import React from 'react'
 import { ArrowDropDown, FavoriteBorder, ShoppingCart, AccountCircle } from '@material-ui/icons'
-
+import { Link } from "react-router-dom";
 function SecondHeader() {
     return (
         <div className="main_secondheader">
@@ -13,8 +13,8 @@ function SecondHeader() {
             <div className="main_secondheader_nav-right">
                 <div className="main_secondheader_nav-right-items">
                     <div className="main_secondheader_nav-right-item pt-3"> <FavoriteBorder /></div>
-                    <div className="main_secondheader_nav-right-item pt-3">  <ShoppingCart /></div>
-                    <div className="main_secondheader_nav-right-item pt-3"> <AccountCircle /></div>
+                    <div className="main_secondheader_nav-right-item pt-3"><Link to="/cart" style={{ textDecoration: "none", color: "black" }}><ShoppingCart /></Link></div>
+                    <div className="main_secondheader_nav-right-item pt-3"><Link to="/login" style={{ textDecoration: "none", color: "black" }}><AccountCircle /></Link></div>
                     <div className="main_secondheader_nav-right-item"> <button className="classifieds-btn">Classifieds</button></div>
                 </div>
             </div>

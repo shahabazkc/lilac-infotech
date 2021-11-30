@@ -1,28 +1,67 @@
+import { Star } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react'
-import { Star } from '@material-ui/icons'
-import { BestDeals } from '../products/product'
-
-function Recently_Viewed() {
+import { addToCart, getProducts } from '../../Handlers/handler';
+import { BestDeals } from '../../products/product'
+import { useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+function ProductFirstrow(props) {
+    const navigate = useNavigate();
     const [bestDeals, setBestDeals] = useState([]);
+    const [loginStatus, setLoginStatus] = useState(false);
+
     useEffect(() => {
-        let newArr = [];
-        for (let i = 0; i < 5; i++) {
-            newArr.push(BestDeals[i]);
+        if (props.props===true) {
+            setLoginStatus(props.props);
         }
-        setBestDeals(newArr)
+        else {
+            setLoginStatus(false);
+        }
+    }, [props]);
+
+    const handleAddToCart = (proId) => {
+        if (loginStatus) {
+            addToCart(proId).then((response) => {
+                if (response.data.token === false) {
+                    navigate('/login')
+                }
+                else if(response.data.response){
+                    toast("Added to Cart Successfully")
+                }
+            })
+        }
+        else {
+            navigate('/login')
+        }
+    }
+
+    useEffect(() => {
+        let data = { type: "first-category" };
+        getProducts(data).then((res) => {
+            if (res.data) {
+                setBestDeals([...res.data])
+            } else {
+                setBestDeals(BestDeals)
+            }
+        }).catch((err) => {
+            setBestDeals(BestDeals)
+        });
+
+
         return () => {
 
         }
-    }, [BestDeals]);
+    }, []);
+
     return (
         <div className="product_first_row_main mt-5">
-            <h3>Recently Viewed</h3>
+            <h3>Best Deals</h3>
             <div className="row">
                 {
                     bestDeals.map((elem, index) => {
                         return (
-                            <div className="best-deals-product col-2 p-1 m-3">
-
+                            <div style={{ cursor: "pointer" }} key={index} onClick={() => handleAddToCart(elem._id)} className="best-deals-product col-2 p-1 m-3">
                                 <div className="img-product-1">
                                     <img className="best-deals-img img-fluid" src={elem.image} alt="" />
                                 </div>
@@ -48,7 +87,8 @@ function Recently_Viewed() {
                     })}
             </div>
         </div>
+
     )
 }
 
-export default Recently_Viewed
+export default ProductFirstrow

@@ -1,38 +1,50 @@
-import { Slider } from '@material-ui/core'
-import React from 'react'
-import Navbar from '../../Components/navBarComponent'
-import SecondHeader from '../../Components/secondheader'
-import TopHeader from '../../Components/topHeader'
-import Slider_main from '../../Components/slider_main'
-import Product_Firstrow from '../../Components/Product_Firstrow'
-import Product_Second from '../../Components/Product_Second'
-import Recommented from '../../Components/Recommented'
-import Flash_sale from '../../Components/Flash_sale'
-import Add_cart from '../../Components/Add_cart'
-import Cards_last from '../../Components/Cards_last'
-import Recently_Viewed from '../../Components/Recently_Viewed'
-import Footer from '../../Components/Footer'
-import { ArrowUpward ,MailOutline} from '@material-ui/icons'
-import News_letter from '../../Components/News_letter'
+import React, { useEffect, useState } from 'react'
+import Navbar from '../../Components/home/navBarComponent'
+import SecondHeader from '../../Components/home/secondheader'
+import TopHeader from '../../Components/home/topHeader'
+import SliderMain from '../../Components/home/slidermain'
+import ProductFirstrow from '../../Components/home/ProductFirstrow'
+import ProductSecond from '../../Components/home/ProductSecond'
+import Recommented from '../../Components/home/Recommented'
+import Flashsale from '../../Components/home/Flashsale'
+import Addcarts from '../../Components/home/AddcartItems'
+import Cardslast from '../../Components/home/Cardslast'
+import RecentlyViewed from '../../Components/home/RecentlyViewed'
+import Footer from '../../Components/home/Footer'
+import { ArrowUpward, MailOutline } from '@material-ui/icons'
+import Newsletter from '../../Components/home/Newsletter'
+import { userLoginCheck } from '../../Handlers/handler'
 
 function HomePage() {
+  const [loginStatus, setLoginStatus] = useState(false);
+  useEffect(() => {
+    userLoginCheck().then((res) => {
+      if (res.data.status) {
+        setLoginStatus(true);
+      }
+      else {
+        setLoginStatus(false);
+      }
+    })
+  }, [])
+
   return (
     <div>
       <TopHeader />
       <SecondHeader />
       <Navbar />
-      <Slider_main />
-      <Product_Firstrow />
-      <Product_Second />
-      <Recommented />
-      <Flash_sale />
-      <Add_cart />
-      <Cards_last />
-      <Recently_Viewed />
+      <SliderMain />
+      <ProductFirstrow props={loginStatus} />
+      <ProductSecond props={loginStatus} />
+      <Recommented props={loginStatus} />
+      <Flashsale props={loginStatus} />
+      <Addcarts props={loginStatus} />
+      <Cardslast props={loginStatus}/>
+      <RecentlyViewed props={loginStatus} />
       <div className="back-to-top">
         <b><p className="pt-4">Back to Top <ArrowUpward /></p></b>
       </div>
-      <News_letter/>
+      <Newsletter />
       <Footer />
     </div>
   )

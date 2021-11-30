@@ -1,6 +1,6 @@
 import React from 'react'
 import { MailOutline } from '@material-ui/icons'
-function News_letter() {
+function Newsletter() {
     return (
         <div className="news_letter">
             <div className="row news_letter_row ">
@@ -27,4 +27,4 @@ function News_letter() {
     )
 }
 
-export default News_letter
+export default Newsletter

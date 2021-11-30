@@ -1,6 +1,6 @@
 import React from 'react'
-import image from '../images/image2.png'
-function Slider_Main() {
+import image from '../../images/image2.png'
+function SliderMain() {
     return (
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
@@ -14,7 +14,7 @@ function Slider_Main() {
                         <div className="slider_main_banner_1">
                             <img src={image} alt="" />
                         </div>
-                        <div className="slider_quoteone">
+                        <div className="slider_quoteone"  style={{color:"black"}}>
                             <p>From students to senior citizen</p>
                             <p>This web portal of</p>
                             <h2><b>"Products And Classifields"</b></h2>
@@ -27,7 +27,7 @@ function Slider_Main() {
                         <div className="slider_main_banner_1">
                             <img src={image} alt="" />
                         </div>
-                        <div className="slider_quoteone">
+                        <div className="slider_quoteone"  style={{color:"black"}}>
                             <p>From students to senior citizen</p>
                             <p>This web portal of</p>
                             <h2><b>"Products And Classifields"</b></h2>
@@ -40,7 +40,7 @@ function Slider_Main() {
                         <div className="slider_main_banner_1">
                             <img src={image} alt="" />
                         </div>
-                        <div className="slider_quoteone">
+                        <div className="slider_quoteone"  style={{color:"black"}}>
                             <p>From students to senior citizen</p>
                             <p>This web portal of</p>
                             <h2><b>"Products And Classifields"</b></h2>
@@ -61,4 +61,4 @@ function Slider_Main() {
     )
 }
 
-export default Slider_Main
+export default SliderMain
